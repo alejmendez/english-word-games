@@ -1,0 +1,38 @@
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    display: block;
+    float: left;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .card .text {
+    font-size: 20px;
+    line-height: 100px;
+  }
+  
+  .card.red {
+    background-color: #ff8585;
+  }
+  .card.green {
+    background-color: #85ff89;
+  }
+  .card.yellow {
+    background-color: #ecff85;
+  }
+  .card.blue {
+    background-color: #85c1ff;
+  }
+  .card.back {
+    background-color: #ccc;
+  }
+  .card.back:hover {
+    background-color: #aaa;
+  }
+  .card.back .text {
+    display: none;
+  }
