@@ -4,8 +4,6 @@ import { getListWords } from './utils';
 import './Game.css';
 import { Card } from './Components/Card';
 
-
-
 const Game = () => {
   const [listWords, setListWords] = useState(getListWords());
 
