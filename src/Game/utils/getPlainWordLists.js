@@ -1,6 +1,11 @@
-const getPlainWordLists = (wordsGroup, listColors) => {
+import { shuffle } from 'lodash';
+
+const getPlainWordLists = (numberOfWords, wordsGroup, listColors) => {
   const listWords = [];
-  for (let i = 0; i < wordsGroup.length; i++) {
+  listColors = shuffle(listColors);
+  wordsGroup = shuffle(wordsGroup);
+
+  for (let i = 0; i < numberOfWords; i++) {
     const wordPair = wordsGroup[i];
     const color = listColors[i];
     const word = {
@@ -17,8 +22,7 @@ const getPlainWordLists = (wordsGroup, listColors) => {
     });
   }
 
-  const shuffledListWords = [...listWords].sort((a, b) => 0.5 - Math.random());
-  return shuffledListWords;
+  return shuffle(listWords);
 }
 
 export {

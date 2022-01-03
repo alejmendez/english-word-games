@@ -4,21 +4,49 @@ import { getListWords } from './utils';
 import './Game.css';
 import { Card } from './Components/Card';
 
+let prevWordSelect = false;
+let prevIndex = false;
+let block = false;
+
 const Game = () => {
   const [listWords, setListWords] = useState(getListWords());
 
   const cardHandler = (propsCard) => {
-    const { text, back } = propsCard;
-    const index = listWords.findIndex(word => word.text === text);
+    if (block) {
+      return;
+    }
+    const { index, word, back } = propsCard;
 
     listWords[index].back = !back;
     setListWords([...listWords]);
+
+    if (prevWordSelect === false) {
+      prevWordSelect = word;
+      prevIndex = index;
+      return;
+    } else {
+      if (prevWordSelect === word) {
+        prevWordSelect = false;
+        prevIndex = false;
+        return;
+      }
+      block = true;
+      setTimeout(() => {
+        listWords[prevIndex].back = back;
+        listWords[index].back = back;
+        setListWords([...listWords]);
+        prevWordSelect = false;
+        prevIndex = false;
+        block = false;
+      }, 2000);
+    }
   };
 
   return (
     <div className="container">
       {listWords.map((wordProps, i) => <Card
         key={i}
+        index={i}
         onClick={cardHandler}
         {...wordProps}
       />)}

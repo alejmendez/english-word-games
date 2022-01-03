@@ -1,38 +1,156 @@
 .card {
-    width: 100px;
-    height: 100px;
-    background-color: #ccc;
-    display: block;
-    float: left;
-    margin: 10px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .card .text {
-    font-size: 20px;
-    line-height: 100px;
-  }
-  
-  .card.red {
-    background-color: #ff8585;
-  }
-  .card.green {
-    background-color: #85ff89;
-  }
-  .card.yellow {
-    background-color: #ecff85;
-  }
-  .card.blue {
-    background-color: #85c1ff;
-  }
-  .card.back {
-    background-color: #ccc;
-  }
-  .card.back:hover {
-    background-color: #aaa;
-  }
-  .card.back .text {
-    display: none;
-  }
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  display: block;
+  float: left;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  position: relative;
+
+  box-shadow: 3px 3px 12px -5px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 3px 3px 12px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 12px -5px rgba(0,0,0,0.75);
+}
+
+.card div {
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.card.back {
+  background-color: #ccc;
+}
+.card.back:hover {
+  background-color: #ccc;
+}
+.card.back div {
+  display: none;
+}
+
+.card-red {
+  color: #fff;
+  background-color: #ef4444;
+}
+.card-red:hover {
+  background-color: #b91c1c;
+}
+.card-orange {
+  color: #fff;
+  background-color: #f97316;
+}
+.card-orange:hover {
+  background-color: #c2410c;
+}
+.card-amber {
+  color: #fff;
+  background-color: #f59e0b;
+}
+.card-amber:hover {
+  background-color: #b45309;
+}
+.card-yellow {
+  color: #fff;
+  background-color: #eab308;
+}
+.card-yellow:hover {
+  background-color: #a16207;
+}
+.card-lime {
+  color: #fff;
+  background-color: #84cc16;
+}
+.card-lime:hover {
+  background-color: #4d7c0f;
+}
+.card-green {
+  color: #fff;
+  background-color: #22c55e;
+}
+.card-green:hover {
+  background-color: #15803d;
+}
+.card-emerald {
+  color: #fff;
+  background-color: #10b981;
+}
+.card-emerald:hover {
+  background-color: #047857;
+}
+.card-teal {
+  color: #fff;
+  background-color: #14b8a6;
+}
+.card-teal:hover {
+  background-color: #0f766e;
+}
+.card-cyan {
+  color: #fff;
+  background-color: #06b6d4;
+}
+.card-cyan:hover {
+  background-color: #0e7490;
+}
+.card-sky {
+  color: #fff;
+  background-color: #0ea5e9;
+}
+.card-sky:hover {
+  background-color: #0369a1;
+}
+.card-blue {
+  color: #fff;
+  background-color: #3b82f6;
+}
+.card-blue:hover {
+  background-color: #1d4ed8;
+}
+.card-indigo {
+  color: #fff;
+  background-color: #6366f1;
+}
+.card-indigo:hover {
+  background-color: #4338ca;
+}
+.card-violet {
+  color: #fff;
+  background-color: #8b5cf6;
+}
+.card-violet:hover {
+  background-color: #6d28d9;
+}
+.card-purple {
+  color: #fff;
+  background-color: #a855f7;
+}
+.card-purple:hover {
+  background-color: #7e22ce;
+}
+.card-fuchsia {
+  color: #fff;
+  background-color: #d946ef;
+}
+.card-fuchsia:hover {
+  background-color: #a21caf;
+}
+.card-pink {
+  color: #fff;
+  background-color: #ec4899;
+}
+.card-pink:hover {
+  background-color: #be185d;
+}
+.card-rose {
+  color: #fff;
+  background-color: #f43f5e;
+}
+.card-rose:hover {
+  background-color: #be123c;
+}
