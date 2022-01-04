@@ -24,22 +24,23 @@ const Game = () => {
       prevWordSelect = word;
       prevIndex = index;
       return;
-    } else {
-      if (prevWordSelect === word) {
-        prevWordSelect = false;
-        prevIndex = false;
-        return;
-      }
-      block = true;
-      setTimeout(() => {
-        listWords[prevIndex].back = back;
-        listWords[index].back = back;
-        setListWords([...listWords]);
-        prevWordSelect = false;
-        prevIndex = false;
-        block = false;
-      }, 2000);
     }
+
+    if (prevWordSelect === word) {
+      prevWordSelect = false;
+      prevIndex = false;
+      return;
+    }
+
+    block = true;
+    setTimeout(() => {
+      listWords[prevIndex].back = back;
+      listWords[index].back = back;
+      setListWords([...listWords]);
+      prevWordSelect = false;
+      prevIndex = false;
+      block = false;
+    }, 2000);
   };
 
   return (
