@@ -4,7 +4,8 @@ import './Card.css';
 const Card = (props) => {
   let { color, text, back, onClick } = props;
 
-  const classList = `card card-${color} ${back ? 'back' : ''}`;
+  const classList = `card ${back ? 'back' : ''}`;
+  const classListCardFront = `card-front card-${color}`;
   const handleClick = () => onClick(props);
 
   text = capitalize(text);
@@ -14,7 +15,12 @@ const Card = (props) => {
       className={classList}
       onClick={handleClick}
     >
-      <div className="inline-block align-middle">{text}</div>
+      <div className="card-inner">
+        <div className={classListCardFront}>
+          <span>{text}</span>
+        </div>
+        <div className="card-back"></div>
+      </div>
     </div>
   );
 }

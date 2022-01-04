@@ -1,38 +1,54 @@
 .card {
   width: 100px;
   height: 100px;
-  background-color: #ccc;
   display: block;
   float: left;
   margin: 10px;
-  border-radius: 10px;
   text-align: center;
   cursor: pointer;
   font-size: 20px;
   position: relative;
-
-  box-shadow: 3px 3px 12px -5px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 3px 3px 12px -5px rgba(0,0,0,0.75);
-  -moz-box-shadow: 3px 3px 12px -5px rgba(0,0,0,0.75);
+  perspective: 1000px;
 }
 
-.card div {
+.card-inner {
+  position: relative;
   width: 100%;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  height: 100%;
+  text-align: center;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
 }
 
-.card.back {
-  background-color: #ccc;
+.card.back .card-inner {
+  transform: rotateY(180deg);
 }
-.card.back:hover {
-  background-color: #ccc;
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 3px 3px 12px -5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 3px 3px 12px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 12px -5px rgba(0, 0, 0, 0.75);
 }
-.card.back div {
-  display: none;
+
+.card-front {
+  background-color: #bbb;
+  color: black;
+  display:table;
+}
+.card-front span {
+  display:table-cell;
+  vertical-align:middle;
+}
+
+.card-back {
+  background-color: #ccc;
+  color: white;
+  transform: rotateY(180deg);
 }
 
 .card-red {
