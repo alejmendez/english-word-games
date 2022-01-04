@@ -1,5 +1,5 @@
 import { capitalize } from 'lodash';
-import './Card.css';
+import './Card.scss';
 
 const Card = (props) => {
   let { color, text, back, onClick } = props;

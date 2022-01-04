@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { getListWords } from './utils';
 
-import './Game.css';
+import './Game.scss';
 import { Card } from './Components/Card';
 
 let prevWordSelect = false;

@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { Game } from './Game/Game';
 
 const App = () => {
