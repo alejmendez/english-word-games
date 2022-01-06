@@ -1,6 +1,6 @@
 .card {
-  width: 100px;
-  height: 100px;
+  width: 195px;
+  height: 195px;
   display: block;
   float: left;
   margin: 10px;
@@ -30,9 +30,7 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  box-shadow: 3px 3px 3px 0px rgba(180, 180, 180, 0.75);
-  -webkit-box-shadow: 3px 3px 3px 0px rgba(180, 180, 180, 0.75);
-  -moz-box-shadow: 3px 3px 3px 0px rgba(180, 180, 180, 0.75);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .card-front {

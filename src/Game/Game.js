@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { getListWords } from './utils';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import './Game.scss';
 import { Card } from './Components/Card';
@@ -44,14 +45,18 @@ const Game = () => {
   };
 
   return (
-    <div className="container">
-      {listWords.map((wordProps, i) => <Card
-        key={i}
-        index={i}
-        onClick={cardHandler}
-        {...wordProps}
-      />)}
-    </div>
+    <Container fluid="md">
+      <Row>
+        <Col>
+          {listWords.map((wordProps, i) => <Card
+            key={i}
+            index={i}
+            onClick={cardHandler}
+            {...wordProps}
+          />)}
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
