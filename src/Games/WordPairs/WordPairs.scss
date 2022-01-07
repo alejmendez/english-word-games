@@ -2,5 +2,16 @@
   .card {
     width: 200px;
     height: 85px;
+    margin: 5px auto;
+    &.selected {
+      transform: scale(1.05, 1.05);
+    }
+  }
+
+  .word-pairs-group-result {
+    .card {
+      margin: 10px 3px;
+      float: left;
+    }
   }
 }

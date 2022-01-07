@@ -2,9 +2,9 @@ import { capitalize } from 'lodash';
 import './Card.scss';
 
 const Card = (props) => {
-  let { color, text, back, onClick } = props;
+  let { color, text, back, selected, onClick } = props;
 
-  const classList = `card ${back ? 'back' : ''}`;
+  const classList = `card ${back ? 'back' : ''} ${selected ? 'selected' : ''}`;
   const classListCardFront = `card-front card-${color}`;
   const handleClick = () => onClick(props);
 

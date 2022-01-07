@@ -27,19 +27,30 @@ $colors: (
       background-color: darken($color, 15%);
     }
   }
+
+  .card.selected {
+    .card-#{$colorName} {
+      color: #fff;
+      background-color: darken($color, 15%);
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      &:hover {
+        background-color: darken($color, 15%);
+      }
+    }
+  }
 }
 
 .card {
   width: 195px;
   height: 195px;
   display: block;
-  float: left;
   margin: 10px;
   text-align: center;
   cursor: pointer;
   font-size: 20px;
   position: relative;
   perspective: 1000px;
+  transition: all 0.4s ease;
 
   &.back .card-inner {
     transform: rotateY(180deg);

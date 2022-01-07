@@ -14,6 +14,7 @@ const generateCardProps = (defaultProps, color, word, text) => {
   return {
     color,
     back: true,
+    selected: false,
     word,
     text,
     ...defaultProps,
