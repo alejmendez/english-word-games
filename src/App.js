@@ -1,8 +1,10 @@
 import './App.scss';
-import { Game } from './Game/Game';
+import { Layout } from './Layout/Layout';
 
 const App = () => {
-  return <Game />;
+  return (
+    <Layout></Layout>
+  );
 }
 
 export default App;

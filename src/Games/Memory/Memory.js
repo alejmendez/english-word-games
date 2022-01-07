@@ -1,16 +1,29 @@
 import { useState } from 'react';
-import { getListWords } from './utils';
+import { getListColors, getListWordsPair, getPlainWordLists } from '../../Utils';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import './Game.scss';
-import { Card } from './Components/Card';
+import './Memory.scss';
+import { Card } from '../Components/Card';
 
 let prevWordSelect = false;
 let prevIndex = false;
 let block = false;
 
-const Game = () => {
-  const [listWords, setListWords] = useState(getListWords());
+const numberOfWords = 6;
+
+const gameOptions = {
+  numberOfWords,
+};
+
+const Memory = () => {
+  const listColors = getListColors();
+  const wordsGroup = getListWordsPair();
+
+  const [listWords, setListWords] = useState(getPlainWordLists({
+    ...gameOptions,
+    wordsGroup,
+    listColors,
+  }));
 
   const cardHandler = (propsCard) => {
     if (block) {
@@ -45,7 +58,7 @@ const Game = () => {
   };
 
   return (
-    <Container fluid="md">
+    <Container className="memory-game" fluid="md">
       <Row>
         <Col>
           {listWords.map((wordProps, i) => <Card
@@ -61,5 +74,5 @@ const Game = () => {
 }
 
 export {
-  Game,
+  Memory,
 }
